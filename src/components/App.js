@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar";
 
 class App extends React.Component {
+  // passing props that is coming from CHILD to PARENT.
   onSearchSubmit(term) {
     console.log(term);
   }

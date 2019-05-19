@@ -12,14 +12,21 @@ class SearchBar extends React.Component {
   // the name is community convention onInputClick,onInputChange,onInputSubmit
   state = { term: "" };
 
-  onFormSubmit(event) {
-    // prevents reset of image when enter is clicked which is default
-    event.preventDefault();
+  // prevents reset of image when enter is clicked which is default
+  //gives error if used, ** check what is left of the
+  //function when this is called and assign it instead of THIS
+  //BEFORE WHICH IS FALSE
+  // onFormSubmit: function(event) {
+  //    event.preventDefault();
+  //   console.log(this.state.term);
+  //}
 
-    //gives error if used, ** check what is left of the
-    //function when this is called and assign it instead of THIS
-    //console.log(this.state.term)
-  }
+  // this is how to fix the undefined error if you need more than 1 line of code for user response such as onFormSubmit
+  onFormSubmit = event => {
+    event.preventDefault();
+    //when using props in a class based component, include THIS.
+    this.props.onSubmit(this.state.term);
+  };
 
   render() {
     return (

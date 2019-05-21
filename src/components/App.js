@@ -2,6 +2,7 @@ import React from "react";
 import unsplash from "../api/unsplash";
 import SearchBar from "./SearchBar";
 import ImageList from "./ImageList";
+import { Helmet } from "react-helmet";
 
 class App extends React.Component {
   // if expect an array, then initialize empty array
@@ -27,9 +28,14 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className="ui container" style={{ marginTop: "10px" }}>
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        <ImageList images={this.state.images} />
+      <div className="body">
+        <Helmet>
+          <style>{"body { background-color: #e6ffe6; }"}</style>
+        </Helmet>
+        <div className="ui container" style={{ marginTop: "10px" }}>
+          <SearchBar onSubmit={this.onSearchSubmit} />
+          <ImageList images={this.state.images} />
+        </div>
       </div>
     );
   }

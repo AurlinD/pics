@@ -10,7 +10,7 @@ class App extends React.Component {
   // passing props that is coming from CHILD to PARENT.
   onSearchSubmit = async term => {
     //method 2 use the axios library to wait for request (easier)
-    //first arugment is the root url+end point, second arugemnt is paramters of queries to
+    //first arugment is the root url+end point, second arugemnt is parameters of queries to
     //return the term
     //gonna at queries=term at the end of the string URL
     const response = await unsplash.get(
